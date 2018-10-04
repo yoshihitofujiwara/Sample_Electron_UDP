@@ -28,11 +28,8 @@ load(setup);
 	@load 設定ファイルの読込
 --------------------------------------------------------------------------*/
 function load(callback) {
-	let isDevelop = process.argv[2] && process.argv[2].indexOf("-development") != -1;
-
 	// SettingFile
 	let file = electron.app.getAppPath("Resources") + "/settings.xml";
-
 
 	fs.readFile(file, (err, data) => {
 		if (err) {
@@ -84,7 +81,7 @@ function setup(){
 	@openWindow アプリ起動
 --------------------------------------------------------------------------*/
 function openWindow() {
-	if(window) closeWindow();
+	if (window != null) closeWindow();
 
 	// ウィンドウ生成
 	window = new electron.BrowserWindow({
@@ -109,6 +106,7 @@ function openWindow() {
 	});
 
 
+	// create udp
 	createUdpServer();
 	createUdpClient();
 };

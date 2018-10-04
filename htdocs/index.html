@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>Electron UDP</title>
+	<link rel="stylesheet" href="assets/css/styles.css" media="all">
+</head>
+
+<body>
+	<section id="client" class="box">
+		<h1>UDP送信メッセージ</h1>
+		<input id="message" type="text">
+		<button>UDP送信</button>
+	</section>
+
+	<section id="server" class="box">
+		<h1>UDP受信ログ</h1>
+		<dd><textarea readonly id="log" cols="50" rows="10"></textarea></dd>
+		<button id="log_clear">UDP受信ログ クリア</button>
+	</section>
+
+	<script src="assets/js/renderer.js"></script>
+	</body>
+</html>

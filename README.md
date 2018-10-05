@@ -1,4 +1,4 @@
-# README
+# Electron UDP通信
 
 ## Usage
 1. 通信する2台のPCを用意(Mac or Win)
@@ -17,7 +17,8 @@ mac版: /package/UDP-darwin-x64/UDP.app/Contents/Resources/app/settings.xml<br>
 	<serverPort>22222</serverPort>
 </settings>
 ```
-4. 2台のPCのアプリを立ち上げ、UDP送信メッセージのテキスト欄に入力し「UDP送信」すると相互にOSC通信が行えます。
+4. 2台のPCのアプリを立ち上げ、UDP送信メッセージのテキスト欄に入力し「UDP送信」すると相互にUDP通信が行えます。
+※ アプリに応じて値を変えたり、json,osc等のフォーマットで最適化すれば扱いやすくなります。
 
 
 ***

@@ -107,8 +107,8 @@ function openWindow() {
 
 
 	// create udp
-	createUdpServer();
-	createUdpClient();
+	createServer();
+	createClient();
 };
 
 
@@ -121,7 +121,7 @@ function closeWindow() {
 
 	electron.session.defaultSession.clearCache(() => { })
 
-	if (window != null){
+	if (process.platform !== "darwin") {
 		window.close();
 		window = null;
 	}
@@ -131,9 +131,9 @@ function closeWindow() {
 
 
 /*--------------------------------------------------------------------------
-	@createUdpServer UDPサーバー生成（受信側）
+	@createServer UDPサーバー生成（受信側）
 --------------------------------------------------------------------------*/
-function createUdpServer() {
+function createServer() {
 	udpServer = dgram.createSocket("udp4");
 
 	// # OSC受信
@@ -178,9 +178,9 @@ function createUdpServer() {
 
 
 /*--------------------------------------------------------------------------
-	@createUdpClient UDP送信
+	@createClient UDP送信
 --------------------------------------------------------------------------*/
-function createUdpClient() {
+function createClient() {
 	udpClient = dgram.createSocket("udp4");
 
 	electron.ipcMain.on("client", (_ipcRenderer, param) => {
